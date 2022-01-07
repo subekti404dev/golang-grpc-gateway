@@ -1,7 +1,7 @@
 FROM golang:alpine3.15
 
 ENV GO111MODULE=on   
-RUN apk update && apk add protoc make --no-cache && rm -rf /var/cache/apk/*
+RUN apk update && apk add protoc make git --no-cache && rm -rf /var/cache/apk/*
 
 RUN go get -d github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway \
 	&& go get -d github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2 \
